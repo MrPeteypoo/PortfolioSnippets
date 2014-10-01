@@ -1,7 +1,7 @@
 Galaxodus
 =========
 
-Galaxodus is a co-op sci-fi twin stick shooter for the PC. The code in this folder is snippets that I personally coded for use in the game.
+Galaxodus is a co-op sci-fi twin stick shooter for the PC. The code in this folder is snippets that I personally coded for use in the game. The games website is here: http://www.galaxodus.uk/
 
 All code here is licensed with the CC0 1.0 license so anyone can feel free to go ahead and change it, improve it, etc.
 
