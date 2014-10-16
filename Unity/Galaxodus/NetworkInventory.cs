@@ -50,7 +50,7 @@ public enum RequestType
     bool                m_hasAdminKeyBeenRetrieved = false;         //!< The master key can only be retrieved once, otherwise an invalid value will be returned.
     bool                m_ticketValidityResponse = false;           //!< Used to tell the client if their ticket is valid or not.
 
-    int                 m_adminKey = 0;                             //!< A unique key which allows for elevated privelages such as replacing requested tickets
+    int                 m_adminKey = 0;                             //!< A unique key which allows for elevated privileges such as replacing requested tickets.
     int                 m_ticketNumber = 0;                         //!< A valid ticket number which will be incremented each time a ticket is created. NOTE: NEVER SET THIS VALUE DIRECTLY! Use getters and setters instead.
 
     int                 m_addRequests = 0;                          //!< A counter for how many add requests have been made. NOTE: NEVER SET THIS VALUE DIRECTLY! Use getters and setters instead.
