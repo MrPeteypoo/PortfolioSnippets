@@ -7,46 +7,46 @@ public sealed class ItemTicket
 {
     #region Member variables
 
-	/// <summary>
-	/// Each ticket should contain a unique ID which is used to identify whether the ticket is valid or not.
-	/// </summary>
-	public int uniqueID = -1;
-	
-	
-	/// <summary>
-	/// Each item contains a unique ID which itemID represents, this should be used as a fall-back if the index is invalid.
-	/// </summary>
-	public int itemID = -1;
+    /// <summary>
+    /// Each ticket should contain a unique ID which is used to identify whether the ticket is valid or not.
+    /// </summary>
+    public int uniqueID = -1;
+    
+    
+    /// <summary>
+    /// Each item contains a unique ID which itemID represents, this should be used as a fall-back if the index is invalid.
+    /// </summary>
+    public int itemID = -1;
 
 
-	/// <summary>
-	/// The itemIndex identifies where in the array or list of the NetworkInventory the corresponding item should be.
-	/// </summary>
-	public int itemIndex = -1;
-	
-	
-	/// <summary>
-	/// A static reference to the default values an ItemTicket holds when it is reset.
-	/// </summary>
-	public static readonly ItemTicket reset = new ItemTicket().Reset();
+    /// <summary>
+    /// The itemIndex identifies where in the array or list of the NetworkInventory the corresponding item should be.
+    /// </summary>
+    public int itemIndex = -1;
+    
+    
+    /// <summary>
+    /// A static reference to the default values an ItemTicket holds when it is reset.
+    /// </summary>
+    public static readonly ItemTicket reset = new ItemTicket().Reset();
 
     #endregion
 
 
     #region Constructors
 
-	/// <summary>
-	/// The default constructor which will initiate the ItemTicket to default invalid values.
-	/// </summary>
-	public ItemTicket (int _uniqueID = -1, int _itemID = -1, int _itemIndex = -1)
-	{
-		uniqueID = _uniqueID;
-		itemID = _itemID;
-		itemIndex = _itemIndex;
-	}
+    /// <summary>
+    /// The default constructor which will initiate the ItemTicket to default invalid values.
+    /// </summary>
+    public ItemTicket (int _uniqueID = -1, int _itemID = -1, int _itemIndex = -1)
+    {
+        uniqueID = _uniqueID;
+        itemID = _itemID;
+        itemIndex = _itemIndex;
+    }
 
     #endregion
-	
+    
 
     #region Operators
 
@@ -69,18 +69,18 @@ public sealed class ItemTicket
     /// <param name="o">The <see cref="System.Object"/> to compare with the current <see cref="ItemTicket"/>.</param>
     /// <returns><c>true</c> if the specified <see cref="System.Object"/> is equal to the current <see cref="ItemTicket"/>;
     /// otherwise, <c>false</c>.</returns>
-	public override bool Equals (object o)
-	{
+    public override bool Equals (object o)
+    {
         // Check that the object is indeed an ItemTicket
-		if (!(o is ItemTicket))
+        if (!(o is ItemTicket))
         {
             return false;
         }
 
         // Check the ticket
         ItemTicket ticket = (ItemTicket) o;
-		return ((uniqueID == ticket.uniqueID) && (itemID == ticket.itemID) && (itemIndex == ticket.itemIndex));
-	}
+        return ((uniqueID == ticket.uniqueID) && (itemID == ticket.itemID) && (itemIndex == ticket.itemIndex));
+    }
 
 
     /// <summary>
@@ -98,36 +98,36 @@ public sealed class ItemTicket
     /// Returns a <see cref="System.String"/> that represents the current <see cref="ItemTicket"/>.
     /// </summary>
     /// <returns>A <see cref="System.String"/> that represents the current <see cref="ItemTicket"/>.</returns>
-	public override string ToString()
-	{
-		return string.Format ("Ticket: {0}, with itemID: {1} and indexID: {2}", uniqueID, itemID, itemIndex);
-	}
+    public override string ToString()
+    {
+        return string.Format ("Ticket: {0}, with itemID: {1} and indexID: {2}", uniqueID, itemID, itemIndex);
+    }
 
     #endregion
 
 
     #region Helper functions
 
-	/// <summary>
-	/// A simple function which will check to see if any value is equal to -1, making it invalid.
-	/// </summary>
-	public bool IsValid()
-	{
-		return !(uniqueID == -1 || itemID == -1);
-	}
+    /// <summary>
+    /// A simple function which will check to see if any value is equal to -1, making it invalid.
+    /// </summary>
+    public bool IsValid()
+    {
+        return !(uniqueID == -1 || itemID == -1);
+    }
 
 
-	/// <summary>
-	/// Will reset the value of each variable to -1.
-	/// </summary>
-	public ItemTicket Reset()
-	{
-		uniqueID = -1;
-		itemID = -1;
-		itemIndex = -1;
+    /// <summary>
+    /// Will reset the value of each variable to -1.
+    /// </summary>
+    public ItemTicket Reset()
+    {
+        uniqueID = -1;
+        itemID = -1;
+        itemIndex = -1;
 
-		return this;
-	}
+        return this;
+    }
 
     #endregion
 }
